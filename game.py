@@ -7,7 +7,6 @@ import time
 from PyInquirer import Separator, prompt
  
 
-
 def clear():
     print("\n" * 100)
 
@@ -19,6 +18,7 @@ def loadingScreen():
 
 
     print("Rap contenders")
+
 
 def word():
     phrase =''
@@ -68,7 +68,7 @@ def word():
         }
     ]
 
-    answers =prompt(word)
+    answers = prompt(word)
     phrase = phrase + ' ' + answers['word']
 
 
@@ -95,7 +95,11 @@ def word():
 
     answers = prompt(word)
     phrase = phrase + ' ' + answers['word']
+
+    len(phrase)
+
     return phrase
+
 
 def Accueil():
          print(15 * '-')
@@ -111,7 +115,7 @@ def Accueil():
          valid = False
          while(valid == False):
 
-            choix = input('Que voulez vous faire?:')
+            choix = input('Que voulez-vous faire ?')
 
             choix = int(choix)
 
@@ -140,11 +144,10 @@ def Accueil():
                 quit() 
 
 
-
 def Champions():
     sentence   =  ''
     score      =  0
-    Champion1= [
+    Champion1 = [
         {
             'type': 'list',
             'name': 'Champions',
@@ -158,7 +161,7 @@ def Champions():
             ]
         }
     ]
-    Champion2= [
+    Champion2 = [
         {
             'type': 'list',
             'name': 'Champions',
@@ -174,8 +177,6 @@ def Champions():
     ]
   
     return prompt(Champion1)["Champions"], prompt(Champion2)["Champions"]
-
-
 
 
 def jeu():
@@ -201,12 +202,6 @@ def jeu():
     print('phrase du champion 2:' + phraseChampion2)
 
     points(phraseChampion1,phraseChampion2)
-    
-
-
-    
-    
-
 
 
 def rejouer():
@@ -217,12 +212,16 @@ def rejouer():
         if choix in('o', 'oui', 'ok'):
             continuer = False
             break
+
         
 def points(phrase,phrase2): 
      score1,score2 = len(phrase),len(phrase2)
-     if score1 < score2:
-         print("GG à toi champion1 tu as win ce battle")
+     print('Score du Champion 1 :', len(phrase)* 2)
+     print('Score du Champion 2 :', len(phrase2)* 2)
+
      if score1 > score2:
+         print("GG à toi champion1 tu as win ce battle")
+     if score1 < score2:
          print("GG à toi champion2 tu as win ce battle")
      if score1 == score2:
          print("Match Nul! Rejouez pour savoir qui est le best!")
