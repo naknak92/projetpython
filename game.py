@@ -235,7 +235,8 @@ def points(phrase,phrase2):
 
 #loadingScreen()
 Accueil()
-    
+#qefdhufsefi
+#jfdhqeuifgze
 
 
 
